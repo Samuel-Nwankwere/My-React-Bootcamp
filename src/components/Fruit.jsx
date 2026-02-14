@@ -1,7 +1,9 @@
-export default function Fruit(){
+export default function Fruit({name,price}){
     return (
     <div>
-        Fruit
+        <li style={{color:"green", fontSize:"20px"}}>
+            {name} - {price}
+        </li>
     </div>
     )
 }
