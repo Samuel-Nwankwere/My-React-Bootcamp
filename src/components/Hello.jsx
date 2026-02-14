@@ -14,14 +14,13 @@ export default function Hello (){
                 <p>{people.message}</p>
                 <p>{people.emoji}</p>
              <small >User seat no: {people.seatNumbers}</small> 
-             <hr />
+             <div className="Button">
+            <Button/>
+            </div>
                 </div>
                 
             )))}
-            <div className="Button">
-            <Button/>
-            <hr />
-            </div>
+            
         </>
     )
 

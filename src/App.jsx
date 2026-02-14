@@ -6,9 +6,8 @@ function App() {
 
   return (
     <div className="App">
-      <Hello/>
+      {/* <Hello/> */}
       <Fruits/>
-      <Button />gi
     </div>
   )
 }
