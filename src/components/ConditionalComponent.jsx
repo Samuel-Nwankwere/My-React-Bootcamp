@@ -1,29 +1,35 @@
 import Welcome from "../Welcome";
+import Code from "../Code";
 
 export default function ConditionalComponent (){
-//I'll make a conditioner to display the <h3> when they are triggered.
-const showHeader = true;
-if(showHeader == true){
-    return (
-        <div>
-        <h1>Sammy did it!</h1>
-    </div>
-    )
-}else{
-    return(
-        <div>
-        <h3>NO! He didn't</h3>
-    </div>
-    )
+// conditional rendering using Element Variable.
+// Element variable allows us to write HTML in js.
+// ===============================================================
+//  Using conditioners:
+// const showMessage = true;
+// if(showMessage !== true){
+//     return (
+//         <div>
+//             {messageOne}
+//         </div>
+//     )
+// }else{
+//     return (
+//         <div>
+//             {messageTwo}
+//         </div>
+//     )
+// }
+// ================================================================
+
+//We could display this better by returning one statement.
+let message;
+const showMessage = true;
+if(showMessage !== true){
+  message = <h1>This is message one</h1>;
 }
-//Displaying components conditionally
-const display = true;
-if(display){
-    return <Welcome/>
-}else{
-    return <Code/>
-};
-    
- //Displaying Jsx Conditionally
- 
+else{
+    message =  <h1>This is message two</h1>;
+}
+return message;
 }
