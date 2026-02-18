@@ -1,0 +1,90 @@
+/* .App{
+    background-color:rgb(225, 157, 157); 
+} */
+body{
+    /* background: linear-gradient(#FF9A8B to #FF6A88 to #FF99AC); */
+    min-height: 100vh;
+    align-items: center;
+    display: flex;
+    justify-content: space-around;
+    background: url('./images/Gemini_Generated_Image_4dj3do4dj3do4dj3.png');
+}
+
+.flex-box{
+    display: flex;
+    justify-content: space-around;
+    width: 900px;
+    align-self: center;
+}
+.header{
+    text-align: center;
+    color: rgb(48, 101, 215);
+}
+.text{
+    color: white;
+}
+
+.image-flex{
+    display:  flex;
+    gap:18px;
+    padding-top: 5px;
+    align-items: center;
+}
+.flex-item{
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 100%;
+    gap: 14px;
+    
+}
+.single-user{
+   text-align: justify;
+   border: 1px solid black;
+    padding: 1px 10px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(0,  0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+}
+
+
+.profile-pic{
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+}
+.header{
+    color: rgb(255, 255, 255);
+    text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+ul{
+    list-style: none;
+    text-decoration: none;
+}
+
+li{
+    width: 50%;
+  
+}
+
+.known-for{
+    color: gray;
+}
+
+.delete-btn{
+    padding: 10px 15px;
+    width: 100%;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: red;
+    border-radius: 4px;
+}

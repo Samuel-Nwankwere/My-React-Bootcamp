@@ -3,16 +3,20 @@ import Fruit from "./Fruit";
 //I imported Fruit component, 'Fruits' is the name of this file also a component
 export default function Fruits() {
   const fruits = [
-    {name:"Mango", price:"$4"},
-    {name:"Apple", price:"$3"},
-    {name:"Pineapple", price:"$5"}
+    {name:"Mango", price:5 , soldout :false},
+    {name:"Apple", price:4 , soldout :true},
+    {name:"Pineapple", price: 15 , soldout :false } ,
+    {name:"Orange", price: 6 , soldout :true},
+    {name:"Pear", price:11 , soldout :true}
+  
   ];
  
   return (
     <div>  
+       <h2>Prices listed here are filtered </h2>
       {fruits.map((fruit => (
-      //  <Fruit key={fruit.name} name={fruit.name} price ={fruit.price} />
-      <Fruit key={fruit.name} name={fruit.name} price={fruit.price}/>
+     <Fruit key={fruit.name} name={fruit.name} price ={fruit.price} soldout={fruit.soldout} />
+      
       
       )))}
 
