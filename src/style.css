@@ -1,8 +1,8 @@
-/* .App{
+/* /* .App{
     background-color:rgb(225, 157, 157); 
-} */
+} *
 body{
-    /* background: linear-gradient(#FF9A8B to #FF6A88 to #FF99AC); */
+    /* background: linear-gradient(#FF9A8B to #FF6A88 to #FF99AC); *
     min-height: 100vh;
     align-items: center;
     display: flex;
@@ -16,10 +16,7 @@ body{
     width: 900px;
     align-self: center;
 }
-.header{
-    text-align: center;
-    color: rgb(48, 101, 215);
-}
+
 .text{
     color: white;
 }
@@ -48,7 +45,6 @@ body{
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 8px;
 }
-
 
 .profile-pic{
     width: 50px;
@@ -86,5 +82,9 @@ li{
     font-weight: 600;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: red;
+    margin-bottom: 5px;
     border-radius: 4px;
 }
+.delete-btn:hover{
+    background-color: rgb(222, 4, 4);
+} */

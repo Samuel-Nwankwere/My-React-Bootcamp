@@ -1,45 +1,44 @@
-//Day 7: Learning useState
+//Day 7: Learning useState: Deleting a User
 import { users } from "./User";
 import { useState } from "react";
 
 export default function Message() {
-  const [user, setUser] = useState(users);
 
+  const[user , setUser] = useState(users);
   const deleteUser = (id) => {
     const newUser = user.filter((u) => u.id !== id);
-    // u is shorthand for uer
-    console.log(id)
     setUser(newUser);
-  };
+  }
 
-  const userProfile = user.map((u) => (
+
+  const listOfUser = user.map((u) => (
     <div className="single-user" key={u.id}>
-      {" "}
       <div className="image-flex">
-         <img src={u.imageUrl} alt={u.name} className="profile-pic" />
-    
+        <img className="profile-pic" src={u.imageUrl} alt="" />
         <p className="text">
-          {" "}
-          <b>
-            {u.name} {u.surname} ({u.age} )
-          </b>
-           <br /> <small className="knownFor">{u.knownFor}</small>
-          <br />
+          <b>{u.name} {u.surname} ({u.age}) </b> <br />
+         <small>{u.knownFor}</small>
         </p>
-        {" "}
       </div>
-      <p className="text">{u.message}</p>
-      <button className="delete-btn" onClick={() => deleteUser(u.id)}>Delete </button>
+      <div>
+        <p className="text">{u.message}</p>
+      </div>
+
+      <button className="delete-btn" onClick={() => deleteUser(u.id)}>
+        Delete
+      </button>
     </div>
   ));
 
   return (
-   <>
-    <h2 className="header">List Of Posts</h2>
-    <div className="flex-box">
-      
-      <div className="flex-item">{userProfile}</div>
-    </div>
+    <>
+      <div className="header">
+        {" "}
+        <h1>List Of Users </h1>
+      </div>
+      <div className="flexbox">
+        <div className="flex-item">{listOfUser}</div>
+      </div>
     </>
   );
 }

@@ -1,32 +1,46 @@
 import { useState } from "react";
-// import './style.css' 
-function MyButton({ count, setCount }) {
-  function addItem() {
-    setCount((count) => count + 1);
-  }
-  function removeItem(){
-    setCount ((count => count - 1))
-  }
+export default function Button(){
+const [count , setCount] = useState(0);
+const [incrementBy , setIncrementBy]= useState(1);
 
-  return (
-    <div>
-      <button onClick={addItem}>Add +</button>
-      <button onClick={removeItem}>Remove -</button>
+function increaseCount (){
+  setCount( count => count + incrementBy)
+}
+function decreaseCount (){
+  setCount(count => count - incrementBy)
+} 
 
-    </div>
-  );
+function increaseIncrementBy (){
+  setIncrementBy (incrementBy => incrementBy + 1)
 }
 
-export default function Button() {
-  const [count, setCount] = useState(0);
-
-  return (
-    <div className="card">
-      <h2>Cart: {count} Items </h2>
-      <MyButton count={count} setCount={setCount} />
-    </div>
-  );
+function decreaseIncrementBy(){
+  setIncrementBy (incrementBy => incrementBy - 1)
 }
+ return(
+  <>
+  <div>
+    <h1>Current Value : {count}</h1>
+    <button onClick={increaseCount}>Increase Value</button>
+    <button onClick={decreaseCount}>Decrease Value</button>
+  </div>
+
+  <div>
+    <h1>Increase Value : {incrementBy}</h1>
+    <button onClick={increaseIncrementBy}>Increase Value</button>
+    <button onClick={decreaseIncrementBy}>Decrease Value</button>
+  </div>
+  </>
+ )
+}
+
+
+
+
+
+
+
+
 
 // function MyButton({count , setCount}) {
 //   function handleClick() {
