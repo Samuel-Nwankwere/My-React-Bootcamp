@@ -1,13 +1,13 @@
 import { useState } from "react";
 export default function Button(){
 const [count , setCount] = useState(0);
-const [incrementBy , setIncrementBy]= useState(1);
+const [incrementBy , setIncrementBy]= useState(0);
 
 function increaseCount (){
-  setCount( count => count + incrementBy)
+  setCount( count => count + incrementBy )
 }
 function decreaseCount (){
-  setCount(count => count - incrementBy)
+  setCount(count => count - incrementBy >= 0 ? count - incrementBy : 0)
 } 
 
 function increaseIncrementBy (){
@@ -15,20 +15,39 @@ function increaseIncrementBy (){
 }
 
 function decreaseIncrementBy(){
-  setIncrementBy (incrementBy => incrementBy - 1)
+  setIncrementBy (incrementBy => incrementBy > 1 ? incrementBy - 1 : 0)
+}
+
+function resetAll (){
+ setCount(0)
+ setIncrementBy(0)
+    
 }
  return(
   <>
-  <div>
-    <h1>Current Value : {count}</h1>
-    <button onClick={increaseCount}>Increase Value</button>
-    <button onClick={decreaseCount}>Decrease Value</button>
-  </div>
+  <div className="container">
+    <header>
+      <h1>Counter App</h1>
+    </header>
+    <div className="increaseCount">
+      <h4>Current Value : <span className="count-value">{count}</span></h4>
+      <div className="btn-grid">
+        <button className="btn" onClick={increaseCount}>Increase </button>
+        <button className="btn" onClick={decreaseCount}>Decrease </button>
+      </div>
+    </div>
+    <hr />
+    <div className="increaseCount">
+      <h4>Increase value by :<span className="count-value"> {incrementBy}</span></h4>
+      <div className="btn-grid">
+        <button className="btn" onClick={increaseIncrementBy}>Increase</button>
+        <button className="btn" onClick={decreaseIncrementBy}>Decrease </button>
+      </div>
+    </div>
 
-  <div>
-    <h1>Increase Value : {incrementBy}</h1>
-    <button onClick={increaseIncrementBy}>Increase Value</button>
-    <button onClick={decreaseIncrementBy}>Decrease Value</button>
+    <div className="resetBtn">
+      <button onClick={resetAll}>Reset</button>
+    </div>
   </div>
   </>
  )
