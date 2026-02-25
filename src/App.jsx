@@ -3,6 +3,7 @@ import ConditionalComponent from "./components/ConditionalComponent";
 import Fruits from "./components/Fruits";
 import Hello from "./components/Hello";
 import Message from "./components/Message";
+import Form from "./components/Form";
 import './style.css' 
 function App() {
 
@@ -10,7 +11,8 @@ function App() {
     <div className="App">
       {/* <Hello/> */}
      {/* <Message/> */}
-     <Button/>
+     {/* <Button/> */}
+    <Form/>
      {/* <Fruits/> */}
     </div>
   )
